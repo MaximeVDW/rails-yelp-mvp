@@ -1,0 +1,19 @@
+<h1>Restaurant#edit</h1>
+<p>Find me in app/views/restaurant/edit.html.erb</p>
+<%= simple_form_for @restaurant do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @restaurant.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :phone_number %>
+  <%= f.input :category %>
+  <%= f.submit "add", class: "btn btn-primary" %>
+<% end %>
+<p><%= link_to 'Back to index', restaurants_path %></p>

@@ -1,0 +1,26 @@
+<h1><%= @restaurant.name %></h1>
+<br>
+
+<div class="resto_info">
+  <h4> Informations </h4>
+  <p><%= @restaurant.category %></p>
+  <p><%= @restaurant.phone_number %></p>
+  <p><%= @restaurant.address %></p>
+</div>
+<br>
+
+<div>
+  <% @reviews.each do |review| %>
+    <div class="comment">
+      <p>Rating : <%= review.rating %></p>
+      <p><%= review.content %></p>
+    </div>
+  <% end %>
+</div>
+<br>
+
+<p><%= link_to 'Edit', edit_restaurant_path(@restaurant) %></p>
+<p><%= link_to 'Delete', restaurant_path(@restaurant) %></p>
+<br>
+
+<p><%= link_to 'Back to index', restaurants_path %></p>
